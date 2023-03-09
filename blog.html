@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Nome do Site</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+        integrity="sha512-JFsJ6X9/H5TwZSb7Kd+U5z5Bo5JuyyjPXG+EeMrvNmXY+qk9QoiYJjjDZapw07RUIWfr8+eky+6U4QTmtrmLQ=="
+        crossorigin="anonymous" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="#">Advocacia Silva</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="index.html">Início</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Sobre</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Serviços</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Contato</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- Cabeçalho -->
+    <div class="py-3 bg-light">
+        <div class="container">
+            <div class="row align-items-center justify-content-center p-5">
+                <div class="col-md-5">
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
+                        <button class="btn btn-outline-primary" type="submit">Buscar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Banner promocional -->
+    <section class="py-4 bg-secondary text-white text-center">
+        <div class="container">
+            <h2>Conheça nossos serviços jurídicos!</h2>
+            <p>Agende agora uma consulta e tenha o suporte jurídico que você precisa.</p>
+            <a class="btn btn-primary" href="#">Agendar consulta</a>
+        </div>
+    </section>
+    <!-- Destaque de artigos -->
+    <section class="container my-5">
+        <h2 class="mb-4">Últimos Artigos</h2>
+        <div id="artigos" class="row">
+            <!-- Artigos -->
+        </div>
+        <nav id="paginacao" class="mt-4">
+            <ul class="pagination justify-content-center">
+                <!-- Paginação -->
+            </ul>
+        </nav>
+    </section>
+    <section class="py-4">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-4 d-flex flex-column justify-content-center align-items-center">
+                    <h3>Arquivo</h3>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Janeiro 2023</a></li>
+                        <li><a href="#">Dezembro 2022</a></li>
+                        <li><a href="#">Novembro 2022</a></li>
+                        <li><a href="#">Outubro 2022</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 d-flex flex-column justify-content-center align-items-center">
+                    <h3>Categorias</h3>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Direito Civil</a></li>
+                        <li><a href="#">Direito Penal</a></li>
+                        <li><a href="#">Direito Trabalhista</a></li>
+                        <li><a href="#">Direito Tributário</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="bg-light mt-0">
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-md-4">
+                    <h5>Contato</h5>
+                    <p>Entre em contato conosco para agendar uma consulta:</p>
+                    <ul class="list-unstyled">
+                        <li><i class="bi bi-geo-alt"></i> Av. Paulista, 1000 - São Paulo/SP</li>
+                        <li><i class="bi bi-telephone"></i> (11) 1234-5678</li>
+                        <li><i class="bi bi-envelope"></i> contato@advogada.com.br</li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Redes Sociais</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#"><i class="bi bi-facebook"></i> Facebook</a></li>
+                        <li><a href="#"><i class="bi bi-twitter"></i> Twitter</a></li>
+                        <li><a href="#"><i class="bi bi-instagram"></i> Instagram</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Links Úteis</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Política de Privacidade</a></li>
+                        <li><a href="#">Termos de Uso</a></li>
+                        <li><a href="#">Mapa do Site</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <p class="text-center">Advogada - Todos os direitos reservados &copy; 2023</p>
+        </div>
+    </footer>
+    <script>
+        // Dados dos artigos em JSON
+        const artigos = [
+            {
+                titulo: "Como escolher um bom advogado",
+                autor: "João Silva",
+                data: "2022-02-01",
+                conteudo: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel sagittis massa. Nunc sollicitudin elit vel orci dapibus, a varius enim consequat. Morbi euismod neque ac metus venenatis, a varius justo suscipit. Duis eget velit at erat gravida tincidunt."
+            },
+            {
+                titulo: "Os direitos dos consumidores",
+                autor: "Maria Santos",
+                data: "2022-01-15",
+                conteudo: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel sagittis massa. Nunc sollicitudin elit vel orci dapibus, a varius enim consequat. Morbi euismod neque ac metus venenatis, a varius justo suscipit. Duis eget velit at erat gravida tincidunt."
+            },
+            {
+                titulo: "Como evitar fraudes em contratos",
+                autor: "Pedro Lima",
+                data: "2022-01-01",
+                conteudo: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel sagittis massa. Nunc sollicitudin elit vel orci dapibus, a varius enim consequat. Morbi euismod neque ac metus venenatis, a varius justo suscipit. Duis eget velit at erat gravida tincidunt."
+            },
+            {
+                titulo: "A importância de um testamento",
+                autor: "Ana Souza",
+                data: "2021-12-15",
+                conteudo: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel sagittis massa. Nunc sollicitudin elit vel orci dapibus, a varius enim consequat. Morbi euismod neque ac metus venenatis, a varius justo suscipit. Duis eget velit at erat gravida tincidunt."
+            },
+            {
+                titulo: "A importância de um testamento",
+                autor: "Ana Souza",
+                data: "2021-12-15",
+                conteudo: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel sagittis massa. Nunc sollicitudin elit vel orci dapibus, a varius enim consequat. Morbi euismod neque ac metus venenatis, a varius justo suscipit. Duis eget velit at erat gravida tincidunt."
+            }
+        ];
+
+        // Define o número de artigos por página
+        const artigosPorPagina = 3;
+
+        // Calcula o número total de páginas
+        const numPaginas = Math.ceil(artigos.length / artigosPorPagina);
+
+        // Renderiza a página atual de artigos
+        const ARTICLES_PER_PAGE = 3;
+        let page = 1;
+
+        function renderArticles() {
+            const startIndex = (page - 1) * ARTICLES_PER_PAGE;
+            const endIndex = startIndex + ARTICLES_PER_PAGE;
+            const articlesToRender = artigos.slice(startIndex, endIndex);
+
+            const articlesContainer = document.querySelector('#artigos');
+            articlesContainer.innerHTML = '';
+            articlesContainer.classList.add('gap-3', 'align-items-stretch', 'justify-content-center');
+            articlesToRender.forEach(article => {
+                const articleElement = document.createElement('div');
+                articleElement.classList.add('article', 'col-md', 'card', 'p-4');
+
+                const articleTitle = document.createElement('h3');
+                articleTitle.textContent = article.titulo;
+                articleElement.appendChild(articleTitle);
+
+                const articleAuthor = document.createElement('p');
+                articleAuthor.textContent = `Por ${article.autor} em ${article.data}`;
+                articleElement.appendChild(articleAuthor);
+
+                const articleContent = document.createElement('p');
+                articleContent.textContent = article.conteudo;
+                articleElement.appendChild(articleContent);
+
+                articlesContainer.appendChild(articleElement);
+            });
+        }
+
+        function renderPagination() {
+            const totalPages = Math.ceil(artigos.length / ARTICLES_PER_PAGE);
+            const paginationContainer = document.getElementById('paginacao');
+            paginationContainer.innerHTML = '';
+
+            const paginationList = document.createElement('ul');
+            paginationList.classList.add('pagination', 'justify-content-center');
+
+            // Create "Previous" button
+            if (page > 1) {
+                const prevButton = createPaginationButton('Previous', page - 1);
+                paginationList.appendChild(prevButton);
+            }
+
+            // Create numbered buttons
+            for (let i = 1; i <= totalPages; i++) {
+                const button = createPaginationButton(i, i);
+                if (i === page) {
+                    button.classList.add('active');
+                }
+                paginationList.appendChild(button);
+            }
+
+            // Create "Next" button
+            if (page < totalPages) {
+                const nextButton = createPaginationButton('Next', page + 1);
+                paginationList.appendChild(nextButton);
+            }
+
+            paginationContainer.appendChild(paginationList);
+        }
+
+        function createPaginationButton(label, pageNum) {
+            const button = document.createElement('button');
+            button.innerText = label;
+            button.classList.add('page-link');
+            button.addEventListener('click', () => {
+                page = pageNum;
+                renderArticles();
+                renderPagination();
+            });
+
+            const listItem = document.createElement('li');
+            listItem.classList.add('page-item');
+            listItem.appendChild(button);
+
+            return listItem;
+        }
+
+        renderArticles();
+        renderPagination();
+    </script>
+</body>

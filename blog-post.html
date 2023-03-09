@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Blog</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="#">Advocacia Silva</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Início</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Sobre</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Serviços</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Contato</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <section class="post-info py-5">
+        <div class="container">
+            <h1 class="text-center mb-4">Título do Post</h1>
+            <p class="text-center mb-3">Publicado em 01 de Janeiro de 2023 por Nome do Autor</p>
+            <hr>
+        </div>
+    </section>
+
+    <section class="post-content py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at faucibus tortor. Vivamus in augue
+                        ac libero finibus dapibus. Nulla facilisi. Praesent ullamcorper metus eget diam varius, non
+                        gravida velit bibendum. Aliquam in blandit lorem. Fusce vel tincidunt orci. Suspendisse vitae
+                        enim tincidunt, bibendum turpis ac, rhoncus mi. Sed euismod tincidunt nisl et imperdiet. Duis
+                        ultricies lectus sed lacus suscipit bibendum.</p>
+                    <img src="path/to/image.jpg" alt="Descrição da imagem" class="img-fluid mb-4">
+                    <p>Donec vitae magna commodo, blandit odio vel, fringilla ipsum. Maecenas eget feugiat est. Nulla
+                        commodo gravida nisl, eu pulvinar eros suscipit sit amet. Pellentesque eget odio laoreet,
+                        bibendum dolor at, cursus tellus. Morbi vel nibh ac enim finibus semper et ac ex. Nam interdum,
+                        nulla eget posuere tristique, nisl mi molestie nisl, vel scelerisque risus tortor vel sapien.
+                        Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nunc sed
+                        libero odio.</p>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
+                        class="mb-4"></iframe>
+                    <p>Praesent tincidunt euismod risus quis rhoncus. Aliquam sed semper enim, vel malesuada neque.
+                        Vestibulum eget congue metus. Pellentesque a nibh et elit sagittis pharetra eu vel nisl. Donec
+                        eget tortor sem. Sed vehicula, odio eget egestas tincidunt, magna urna fermentum odio, a lacinia
+                        nulla erat vel est. In et tincidunt velit, sed posuere purus. Quisque quis tincidunt tellus.
+                        Aliquam blandit urna et lacus feugiat, non fringilla nunc fringilla. Aliquam vitae sem magna.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="comments-section mt-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Comentários</h2>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="comment">
+                        <div class="comment-body">
+                            <h6 class="comment-author">João</h6>
+                            <span class="comment-date">Publicado em 10 de março de 2023</span>
+                            <p class="comment-text">Ótimo post! Adorei as dicas e já estou colocando em prática.</p>
+                            <a href="#" class="comment-reply">Responder</a>
+                        </div>
+                        <div class="comment-reply-container">
+                            <div class="comment">
+                                <div class="comment-body">
+                                    <h6 class="comment-author">Maria</h6>
+                                    <span class="comment-date">Publicado em 12 de março de 2023</span>
+                                    <p class="comment-text">Concordo com você, João! Estou fazendo o mesmo.</p>
+                                    <a href="#" class="comment-reply">Responder</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Formulário de comentários -->
+                    <div class="comment-form">
+                        <h4 class="mb-4">Deixe um comentário</h4>
+                        <form>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Seu nome">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="email" class="form-control" placeholder="Seu e-mail">
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <textarea class="form-control" placeholder="Seu comentário"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <button type="submit" class="btn btn-primary">Enviar comentário</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="related-posts my-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Posts Relacionados</h2>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card h-100">
+                        <img class="card-img-top" src="img/post1.jpg" alt="Post 1">
+                        <div class="card-body">
+                            <h4 class="card-title"><a href="#">Título do post 1</a></h4>
+                            <p class="card-text">Breve descrição do post 1.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card h-100">
+                        <img class="card-img-top" src="img/post2.jpg" alt="Post 2">
+                        <div class="card-body">
+                            <h4 class="card-title"><a href="#">Título do post 2</a></h4>
+                            <p class="card-text">Breve descrição do post 2.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card h-100">
+                        <img class="card-img-top" src="img/post3.jpg" alt="Post 3">
+                        <div class="card-body">
+                            <h4 class="card-title"><a href="#">Título do post 3</a></h4>
+                            <p class="card-text">Breve descrição do post 3.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="bg-light mt-0">
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Contato</h5>
+                    <p>Entre em contato conosco para agendar uma consulta:</p>
+                    <ul class="list-unstyled">
+                        <li><i class="bi bi-geo-alt"></i> Av. Paulista, 1000 - São Paulo/SP</li>
+                        <li><i class="bi bi-telephone"></i> (11) 1234-5678</li>
+                        <li><i class="bi bi-envelope"></i> contato@advogada.com.br</li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Redes Sociais</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#"><i class="bi bi-facebook"></i> Facebook</a></li>
+                        <li><a href="#"><i class="bi bi-twitter"></i> Twitter</a></li>
+                        <li><a href="#"><i class="bi bi-instagram"></i> Instagram</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Links Úteis</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Política de Privacidade</a></li>
+                        <li><a href="#">Termos de Uso</a></li>
+                        <li><a href="#">Mapa do Site</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <p class="text-center">Advogada - Todos os direitos reservados &copy; 2023</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

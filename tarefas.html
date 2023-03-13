@@ -1,128 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <title>Kanban Board</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
-    <style>
-      .card-header {
-        padding: 0.5rem 1rem;
-        background-color: #e9ecef;
-        border-bottom: 1px solid #dee2e6;
-        font-weight: bold;
-        cursor: pointer;
-      }
 
-      .card-body {
-        padding: 1rem;
-      }
-    </style>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-  </head>
-  <body>
-    <header>
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-          <a class="navbar-brand" href="#">Advocacia Silva</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Início</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Sobre</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Serviços</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Contato</a>
-              </li>
-            </ul>
-          </div>
+<head>
+  <meta charset="UTF-8">
+  <title>Kanban Board</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+  <style>
+    .card-header {
+      padding: 0.5rem 1rem;
+      background-color: #e9ecef;
+      border-bottom: 1px solid #dee2e6;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .card-body {
+      padding: 1rem;
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+    crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <!-- Navbar-->
+  <header>
+  </header>
+  <script>
+    fetch("./partials/header.html")
+      .then(response => {
+        return response.text()
+      })
+      .then(data => {
+        document.querySelector("header").innerHTML = data;
+      });
+  </script>
+  <div class="container-fluid mt-0">
+    <div class="row">
+      <!-- Sidebar -->
+      <aside id="sidebarMenu" class="p-3 col-md-3 col-lg-2 d-md-block bg-light sidebar collapse vh-100 sticky-top">
+        <div class="position-sticky pt-3">
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Painel de Controle</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="calendario.html">Calendário</a>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Meus Processos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Documentos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Comunicação</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Pagamentos</a>
+            </li>
+          </ul>
         </div>
-      </nav>
-    </header>
-    <div class="container-fluid mt-3">
-      <div class="row">
-        <!-- Sidebar -->
-        <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse vh-100 sticky-top">
-          <div class="position-sticky pt-3">
-            <ul class="nav flex-column">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Painel de Controle</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="calendario.html">Calendário</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Meus Processos</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Documentos</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Comunicação</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Pagamentos</a>
-              </li>
-            </ul>
-          </div>
-        </nav>
-        <div class="col-lg">
-          <div class="card">
-            <div class="card-header">To do</div>
-            <div class="card-body">
-              <div id="todo" class="sortable-list">
-                <div class="card mb-3 handle">
-                  <div class="card-body">
-                    <h5 class="card-title">Task 1</h5>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    <button class="btn btn-primary edit-task">
-                      <i class="fa fa-pencil" aria-hidden="true"></i>
-                    </button>
-                    <button class="btn btn-danger delete-task">
-                      <i class="fa fa-trash" aria-hidden="true"></i>
-                    </button>
-                  </div>
+      </aside>
+      <!-- Render Sidebar from a partials file -->
+      <script>
+        fetch("./partials/sidebar.html")
+          .then(response => {
+            return response.text()
+          })
+          .then(data => {
+            document.querySelector("aside").innerHTML = data;
+          });
+      </script>
+      <!-- Kanban Table -->
+      <div class="kanban-table-wrapper col">
+        <div class="kanban-table p-md-5 py-3 row gx-5 gy-5 align-items-start">
+          <!-- To Do Table Column -->
+          <div class="col-lg-4 kanban-table-column">
+            <div class="card">
+              <!-- To-do Header -->
+              <div class="card-header">To do</div>
+              <!-- To-do Body -->
+              <div class="card-body">
+                <div id="todo" class="sortable-list">
+                  <!-- Tasks (Where the tasks and modals are rendered)-->
+                  <div id="taskList"></div>
                 </div>
-                <div class="card mb-3 handle">
-                  <div class="card-body">
-                    <h5 class="card-title">Task 2</h5>
-                    <p class="card-text">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                    <button class="btn btn-sm btn-secondary edit-task-button" data-task-id="task1">Edit</button>
-                    <button class="btn btn-danger delete-task">
-                      <i class="fa fa-trash" aria-hidden="true"></i>
-                    </button>
-                  </div>
-                </div>
-                <div id="taskList"></div>
-                <!-- Edit Task Modal -->
-                <div class="modal fade" id="editTaskModal" tabindex="-1" aria-labelledby="editTaskModalLabel" aria-hidden="true">
+                <!-- Add Tasks Button -->
+                <button class="d-flex btn justify-content-center addTaskIcon">
+                  <i class="fa fa-plus">Adicionar tarefa</i>
+                </button>
+                <!-- Add Tasks Modal -->
+                <div class="modal fade addTaskModal" tabindex="-1" aria-labelledby="addTaskModalLabel"
+                  aria-hidden="true">
                   <div class="modal-dialog modal-dialog-centered modal-lg">
                     <div class="modal-content">
+                      <!-- Add Tasks Modal Header -->
                       <div class="modal-header">
-                        <h5 class="modal-title" id="editTaskModalLabel">Edit Task</h5>
+                        <h5 class="modal-title" id="addTaskModalLabel">Add Task</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                       </div>
+                      <!-- Add Tasks Modal Body -->
                       <div class="modal-body">
-                        <form id="editTaskForm">
-                          <input type="hidden" id="editTaskId">
+                        <form id="addTaskForm">
                           <div class="row mb-3">
                             <div class="col-md-6">
-                              <label for="editTaskTitle" class="form-label">Task Title</label>
-                              <input type="text" class="form-control" id="editTaskTitle" name="editTaskTitle" required>
+                              <!-- Task Title -->
+                              <label for="taskTitle" class="form-label">Task Title</label>
+                              <input type="text" class="form-control" id="taskTitle" name="taskTitle" required>
                             </div>
                             <div class="col-md-6">
-                              <label for="editTaskAssignee" class="form-label">Assign To</label>
-                              <input type="text" list="editBrowsers" class="form-control" id="editTaskAssignee" name="editTaskAssignee">
-                              <datalist id="editBrowsers">
+                              <!-- Task Assignee (Make it possible to assign to more than one person)-->
+                              <label for="taskAssignee" class="form-label">Assign To</label>
+                              <input type="text" list="browsers" class="form-control" id="taskAssignee"
+                                name="taskAssignee">
+                              <!-- List of Employers (Fetch from a json file)-->
+                              <datalist id="browsers">
                                 <option value="Internet Explorer">
                                 <option value="Firefox">
                                 <option value="Chrome">
@@ -133,344 +129,130 @@
                           </div>
                           <div class="row mb-3">
                             <div class="col-md-12">
-                              <label for="editTaskDescription" class="form-label">Task Description</label>
-                              <textarea class="form-control" id="editTaskDescription" name="editTaskDescription" required></textarea>
+                              <!-- Task Description -->
+                              <label for="taskDescription" class="form-label">Task Description</label>
+                              <textarea class="form-control" id="taskDescription" name="taskDescription"
+                                required></textarea>
                             </div>
                           </div>
                           <div class="row mb-3">
                             <div class="col-md-12">
+                              <!-- Task Comments -->
                               <h5>Comments</h5>
                               <div id="commentsSection"></div>
                               <div class="input-group">
                                 <input type="text" class="form-control" id="commentText" placeholder="Add a comment...">
-                                <button class="btn btn-primary" type="button" id="addEditCommentButton">Add Comment</button>
+                                <button class="btn btn-primary addCommentButton" type="button">Add Comment</button>
                               </div>
                             </div>
                           </div>
                         </form>
                       </div>
+                      <!-- Add Tasks Modal Footer -->
                       <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary" id="saveChangesButton">Save Changes</button>
+                        <button type="button" class="btn btn-primary" id="addTaskButton">Add Task</button>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-              <button class="d-flex btn justify-content-center">
-                <i class="fa fa-plus" id="addTaskIcon">Adicionar tarefa</i>
-              </button>
-              <div class="modal fade" id="addTaskModal" tabindex="-1" aria-labelledby="addTaskModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered modal-lg">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="addTaskModalLabel">Add Task</h5>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                      <form id="addTaskForm">
-                        <div class="row mb-3">
-                          <div class="col-md-6">
-                            <label for="taskTitle" class="form-label">Task Title</label>
-                            <input type="text" class="form-control" id="taskTitle" name="taskTitle" required>
-                          </div>
-                          <div class="col-md-6">
-                            <label for="taskAssignee" class="form-label">Assign To</label>
-                            <input type="text" list="browsers" class="form-control" id="taskAssignee" name="taskAssignee">
-                            <datalist id="browsers">
-                              <option value="Internet Explorer">
-                              <option value="Firefox">
-                              <option value="Chrome">
-                              <option value="Opera">
-                              <option value="Safari">
-                            </datalist>
-                          </div>
-                        </div>
-                        <div class="row mb-3">
-                          <div class="col-md-12">
-                            <label for="taskDescription" class="form-label">Task Description</label>
-                            <textarea class="form-control" id="taskDescription" name="taskDescription" required></textarea>
-                          </div>
-                        </div>
-                        <div class="row mb-3">
-                          <div class="col-md-12">
-                            <h5>Comments</h5>
-                            <div id="commentsSection"></div>
-                            <div class="input-group">
-                              <input type="text" class="form-control" id="commentText" placeholder="Add a comment...">
-                              <button class="btn btn-primary" type="button" id="addCommentButton">Add Comment</button>
-                            </div>
-                          </div>
-                        </div>
-                      </form>
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                      <button type="button" class="btn btn-primary" id="addTaskButton">Add Task</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
-        </div>
-        <div class="col-lg">
-          <div class="card">
-            <div class="card-header">In Progress</div>
-            <div class="card-body">
-              <div id="inprogress" class="sortable-list">
-                <div class="card mb-3 handle">
-                  <div class="card-body">
-                    <h5 class="card-title">Task 1</h5>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    <button class="btn btn-danger delete-task">
-                      <i class="fa fa-trash" aria-hidden="true"></i>
-                    </button>
-                  </div>
-                </div>
-                <div class="card mb-3 handle">
-                  <div class="card-body">
-                    <h5 class="card-title">Task 2</h5>
-                    <p class="card-text">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                    <button class="btn btn-primary edit-task">
-                      <i class="fa fa-pencil" aria-hidden="true"></i>
-                    </button>
-                    <button class="btn btn-danger delete-task">
-                      <i class="fa fa-trash" aria-hidden="true"></i>
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="task-title">Title</label>
-                <input type="text" class="form-control" id="task-title" placeholder="Enter task title">
-              </div>
-              <div class="form-group">
-                <label for="task-description">Description</label>
-                <textarea class="form-control" id="task-description" rows="3" placeholder="Enter task description"></textarea>
-              </div>
-              <button type="submit" class="btn btn-primary">Create Task</button>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg">
-          <div class="card">
-            <div class="card-header">Done</div>
-            <div class="card-body">
-              <div id="done" class="sortable-list">
-                <div class="card mb-3 handle">
-                  <div class="card-body">
-                    <h5 class="card-title">Task 3</h5>
-                    <p class="card-text">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <!-- Create In Progress, Review and Done Columns -->
         </div>
       </div>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.13.0/Sortable.min.js"></script>
-    <script>
-      // Add event listener to edit button
-      const editTaskButtons = document.querySelectorAll('.edit-task-button');
-      editTaskButtons.forEach(button => {
-        button.addEventListener('click', () => {
-          // Get task card element
-          const taskCard = button.closest('.handle');
-          // Get task properties
-          const taskTitle = taskCard.querySelector('.card-title').textContent;
-          const taskDescription = taskCard.querySelector('.card-text').textContent;
-          const taskAssignee = taskCard.querySelector('.assignee').textContent;
-          const taskId = button.dataset.taskId;
-          // Populate form fields
-          const editTaskTitleField = document.getElementById('editTaskTitle');
-          editTaskTitleField.value = taskTitle;
-          const editTaskDescriptionField = document.getElementById('editTaskDescription');
-          editTaskDescriptionField.value = taskDescription;
-          const editTaskAssigneeField = document.getElementById('editTaskAssignee');
-          editTaskAssigneeField.value = taskAssignee;
-          const editTaskIdField = document.getElementById('editTaskId');
-          editTaskIdField.value = taskId;
-          // Show modal
-          const modal = new bootstrap.Modal(document.getElementById('editTaskModal'));
-          modal.show();
-        });
-      });
-    </script>
-    <script>
-      // Create Sortable instances for each column
-      function createSortable(elementId, groupName, swapThreshold, handleClass, animation, onAddFn) {
-        Sortable.create(document.getElementById(elementId), {
-          group: groupName,
-          swapThreshold: swapThreshold,
-          handle: handleClass,
-          animation: animation,
-          onAdd: onAddFn
-        });
-      }
-      createSortable("todo", "kanban", 1.5, ".handle", 100, function(evt) {
-        console.log('Moved ' + evt.item.innerText + ' to To Do');
-      });
-      createSortable("taskList", "kanban", 1.5, ".handle", 100, function(evt) {
-        console.log('Moved ' + evt.item.innerText + ' to To Do');
-      });
-      createSortable("inprogress", "kanban", 1.5, ".handle", 150, function(evt) {
-        console.log('Moved ' + evt.item.innerText + ' to In Progress');
-      });
-      createSortable("done", "kanban", 1.5, ".handle", 150, function(evt) {
-        console.log('Moved ' + evt.item.innerText + ' to Done');
-      });
-      // Add click event listener to addTaskIcon to show modal
-      const addTaskIcon = document.getElementById('addTaskIcon');
-      const addTaskModal = document.getElementById('addTaskModal');
-      addTaskIcon.addEventListener('click', () => {
-        const modal = new bootstrap.Modal(addTaskModal);
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.13.0/Sortable.min.js"></script>
+  <!-- I don't know if this is working, I think it's not.-->
+  <script>
+    // Add the event listener to the edit buttons
+    // and populates the edit modal with the task information,
+    // which comes from the card, not from the json file.
+    /*const editTaskButtons = document.querySelectorAll('.edit-task-button');
+    editTaskButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        // Get task card element
+        const taskCard = button.closest('.handle');
+        // Get task properties (title(name), description, assignee and id)
+        const taskTitle = taskCard.querySelector('.card-title').textContent;
+        const taskDescription = taskCard.querySelector('.card-text').textContent;
+        const taskAssignee = taskCard.querySelector('.assignee').textContent;
+        //Access the value of the data-task-id attribute on the button element
+        const taskId = button.dataset.taskId;
+        // Populate form fields
+        const editTaskTitleField = document.getElementById('editTaskTitle');
+        editTaskTitleField.value = taskTitle;
+        const editTaskDescriptionField = document.getElementById('editTaskDescription');
+        editTaskDescriptionField.value = taskDescription;
+        const editTaskAssigneeField = document.getElementById('editTaskAssignee');
+        editTaskAssigneeField.value = taskAssignee;
+        const editTaskIdField = document.getElementById('editTaskId');
+        editTaskIdField.value = taskId;
+        console.log("AAAAAAAAAAAAAA")
+        // Show modal
+        const modal = new bootstrap.Modal(document.getElementById('editTaskModal'));
         modal.show();
       });
-    </script>
-    <script>
-      //Add comment and add event listener
-      function generateCommentHTML(author, text, date) {
-        const commentDate = new Date(date);
-        const formattedDate = commentDate.toLocaleDateString('en-US', {
-          year: 'numeric',
-          month: 'long',
-          day: 'numeric',
-          hour: 'numeric',
-          minute: 'numeric'
-        });
-        const commentCard = document.createElement('div');
-        commentCard.classList.add('card', 'mb-3');
-        const cardBody = document.createElement('div');
-        cardBody.classList.add('card-body');
-        const cardTitle = document.createElement('h6');
-        cardTitle.classList.add('card-subtitle', 'mb-2', 'text-muted');
-        cardTitle.textContent = `${author} - ${formattedDate}`;
-        const cardText = document.createElement('p');
-        cardText.classList.add('card-text');
-        cardText.textContent = text;
-        const buttonsDiv = document.createElement('div');
-        buttonsDiv.classList.add('d-flex', 'justify-content-end');
-        const editButton = document.createElement('button');
-        editButton.type = 'button';
-        editButton.classList.add('btn', 'btn-sm', 'btn-outline-primary', 'mx-1');
-        editButton.textContent = 'Edit';
-        const deleteButton = document.createElement('button');
-        deleteButton.type = 'button';
-        deleteButton.classList.add('btn', 'btn-sm', 'btn-outline-danger', 'mx-1');
-        deleteButton.textContent = 'Delete';
-        cardBody.appendChild(cardTitle);
-        cardBody.appendChild(cardText);
-        buttonsDiv.appendChild(editButton);
-        buttonsDiv.appendChild(deleteButton);
-        cardBody.appendChild(buttonsDiv);
-        commentCard.appendChild(cardBody);
-        // Add event listener to edit button
-        editButton.addEventListener('click', () => {
-          // Get the comment text and author from the HTML
-          const commentText = cardText.textContent;
-          const commentAuthor = cardTitle.textContent.split(' - ')[0];
-          // Show a prompt to the user to edit the comment text
-          const editedText = prompt('Edit your comment:', commentText);
-          if (editedText) {
-            // Update the comment text in the HTML
-            cardText.textContent = editedText;
-            // Update the comment data in the task object
-            const commentIndex = task.comments.findIndex(comment => comment.author === commentAuthor && comment.text === commentText);
-            task.comments[commentIndex].text = editedText;
-            // Save the updated task data
-            localStorage.setItem('tasks', JSON.stringify(tasks));
-          }
-        });
-        // Add event listener to delete button
-        deleteButton.addEventListener('click', () => {
-          // Get the comment text and author from the HTML
-          const commentText = cardText.textContent;
-          const commentAuthor = cardTitle.textContent.split(' - ')[0];
-          const deleteButtonId = `deleteCommentButton-${Date.now()}-${Math.floor(Math.random() * 1000)}`;
-          deleteButton.setAttribute('id', deleteButtonId);
-          // Show a confirmation modal to the user
-          if (confirm('Are you sure you want to delete this comment?')) {
-            // Remove the comment from the HTML
-            commentCard.remove();
-            // Remove the comment data from the task object
-            const commentIndex = task.comments.findIndex(comment => comment.author === commentAuthor && comment.text === commentText);
-            task.comments.splice(commentIndex, 1);
-            // Save the updated task data
-            localStorage.setItem('tasks', JSON.stringify(tasks));
-          }
-          // Remove the comment data from the task object
-          const commentIndex = task.comments.findIndex(comment => comment.author === commentAuthor && comment.text === commentText);
-          task.comments.splice(commentIndex, 1);
-          // Save the updated task data
-          localStorage.setItem('tasks', JSON.stringify(tasks));
-        });
-        return commentCard;
-      }
-
-      function addComment() {
-        const commentText = document.getElementById('commentText').value;
-        const author = 'John Doe'; // replace with actual author name
-        const date = new Date().toISOString(); // use current date/time, take from the enterprise
-        const commentContainer = generateCommentHTML(author, commentText, date);
-        const commentsSection = document.getElementById('commentsSection');
-        commentsSection.appendChild(commentContainer);
-        // Clear the comment input field
-        document.getElementById('commentText').value = '';
-      }
-      document.getElementById('addCommentButton').addEventListener('click', addComment);
-    </script>
-    <script>
-      function handleEditTaskClick(event) {
-        const taskId = event.target.getAttribute('data-task-id');
-        const task = data.tasks.find(task => task.id === taskId);
-        // Set the values in the edit task modal form
-        const editTaskIdInput = document.getElementById('editTaskId');
-        const editTaskTitleInput = document.getElementById('editTaskTitle');
-        const editTaskAssigneeInput = document.getElementById('editTaskAssignee');
-        const editTaskDescriptionInput = document.getElementById('editTaskDescription');
-        editTaskIdInput.value = task.id;
-        editTaskTitleInput.value = task.name;
-        editTaskAssigneeInput.value = task.assignee;
-        editTaskDescriptionInput.value = task.description;
-        // Show the edit task modal
-        const editTaskModal = new bootstrap.Modal(document.getElementById('editTaskModal'));
-        editTaskModal.show();
-      }
-      let data;
-      fetch('tasks.json').then(response => response.json()).then(jsonData => {
+    });*/
+  </script>
+  <script>
+    // Fetch all tasks and create the cards with the data
+    fetch('tasks.json')
+      .then(response => response.json())
+      .then(jsonData => {
         data = jsonData;
-        // Loop through tasks array and generate task cards
         const taskList = document.getElementById('taskList');
         data.tasks.forEach(task => {
           // Create task card element
           const taskCard = document.createElement('div');
           taskCard.classList.add('card', 'mb-3', 'handle');
+
           // Create task card header
           const taskCardHeader = document.createElement('div');
+          const taskCardHeaderText = document.createElement('br');
           taskCardHeader.classList.add('card-header');
-          taskCardHeader.textContent = task.title;
+          taskCardHeader.appendChild(taskCardHeaderText);
+          if (task.priority === 'high') {
+            taskCardHeader.style.backgroundColor = 'red';
+          } else if (task.priority === 'medium') {
+            taskCardHeader.style.backgroundColor = 'yellow';
+          } else if (task.priority === 'low') {
+            taskCardHeader.style.backgroundColor = 'green';
+          } else {
+            // do nothing
+          }
+
+          //taskCardHeader.textContent = task.title;
+
           taskCard.appendChild(taskCardHeader);
+
           // Create task card body
           const taskCardBody = document.createElement('div');
           taskCardBody.classList.add('card-body');
-          // Create task card body content (title, date and asignee)
+
+          // Create task card body content (title, date and assignee)
           const taskTitle = document.createElement('h5');
-          const taskCreationDate = document.createElement('p');
-          const taskAssignee = document.createElement('p');
           taskTitle.classList.add('card-title');
-          taskCreationDate.classList.add('card-text');
-          taskAssignee.classList.add('.assignee')
-          taskCreationDate.textContent = `Created on: ${task.creationDate}`;
           taskTitle.textContent = `${task.name}`;
-          taskAssignee.textContent = `${task.assignee}`;
           taskCardBody.appendChild(taskTitle)
+
+          const taskCreationDate = document.createElement('p');
+          taskCreationDate.classList.add('card-text');
+          taskCreationDate.textContent = `Criado em: ${task.creationDate} por ${task.author}`;
           taskCardBody.appendChild(taskCreationDate);
+
+          const taskAssignee = document.createElement('p');
+          taskAssignee.classList.add('.assignee');
+          taskAssignee.textContent = `Responsável: ${task.assignee}`;
+          taskCardBody.appendChild(taskAssignee);
+
           const taskDescription = document.createElement('p');
           taskDescription.classList.add('card-text', 'collapse');
           taskDescription.textContent = task.description;
           taskCardBody.appendChild(taskDescription);
+
           // Create task card body buttons
           const editButton = document.createElement('button');
           editButton.classList.add('btn', 'btn-primary', 'me-2');
@@ -478,18 +260,327 @@
           editButton.setAttribute('data-task-id', task.id);
           editButton.addEventListener('click', handleEditTaskClick);
           taskCardBody.appendChild(editButton);
+
           const deleteButton = document.createElement('button');
           deleteButton.classList.add('btn', 'btn-danger');
           deleteButton.textContent = 'Delete';
           deleteButton.setAttribute('data-task-id', task.id);
           //deleteButton.addEventListener('click', handleDeleteTaskClick);
           taskCardBody.appendChild(deleteButton);
-          document.getElementById('addEditCommentButton').addEventListener('click', addComment);
+
+          // Create the modal template string
+          const modalTemplate = `
+  <div class="modal fade" id="editTaskModal${task.id}" tabindex="-1" aria-labelledby="editTaskModalLabel${task.id}" aria-hidden="true" data-task-id="${task.id}" data-task-title="${task.title}" data-task-assignee="${task.assignee}" data-task-comments="${JSON.stringify(task.comments)}">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <!-- Edit Task Modal Header -->
+        <div class="modal-header">
+          <h5 class="modal-title" id="editTaskModalLabel${task.id}">Edit Task</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <!-- Edit Task Modal Body -->
+        <div class="modal-body">
+          <form id="editTaskForm${task.id}">
+            <input type="hidden" id="editTaskId" value="${task.id}">
+            <div class="row mb-3">
+              <div class="col-md-6">
+                <label for="editTaskTitle${task.id}" class="form-label">Task Title</label>
+                <input type="text" class="form-control" id="editTaskTitle${task.id}" name="editTaskTitle" value="${task.title}" required>
+              </div>
+              <div class="col-md-6">
+                <label for="editTaskAssignee${task.id}" class="form-label">Assign To</label>
+                <input type="text" list="editBrowsers" class="form-control" id="editTaskAssignee${task.id}" name="editTaskAssignee" value="${task.assignee}">
+                <datalist id="editBrowsers">
+                  <option value="Internet Explorer">
+                  <option value="Firefox">
+                  <option value="Chrome">
+                  <option value="Opera">
+                  <option value="Safari">
+                </datalist>
+              </div>
+            </div>
+            <div class="row mb-3">
+              <div class="col-md-12">
+                <label for="editTaskDescription${task.id}" class="form-label">Description</label>
+                <textarea class="form-control" id="editTaskDescription${task.id}" name="editTaskDescription" required>${task.description}</textarea>
+              </div>
+            </div>
+            <div class="row mb-3">
+              <div class="col-md-12">
+                <h5>Comments</h5>
+                <div id="commentsSection${task.id}" class="overflow-auto" style="max-height: 200px;"></div>
+                <div class="input-group mt-3">
+                  <input type="text" class="form-control" id="commentText${task.id}" placeholder="Add a comment...">
+                  <button class="btn btn-primary" type="button" id="addEditCommentButton${task.id}">Add Comment</button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+        <!-- Edit Task Modal Footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" id="saveChangesButton${task.id}">Save Changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+`;
+
+          document.getElementById('taskList').insertAdjacentHTML('beforeend', modalTemplate);
           taskCard.appendChild(taskCardBody);
           taskList.appendChild(taskCard);
+          document.getElementById(`addEditCommentButton${task.id}`).addEventListener('click', addComment);
         });
       });
-    </script>
-    <script></script>
-  </body>
+  </script>
+  <script>
+    // Add the Drop and Drag Functionality to the cards
+    const KANBAN_GROUP_NAME = "kanban";
+    const SWAP_THRESHOLD = 1.5;
+    const TODO_ANIMATION_DURATION = 100;
+    const INPROGRESS_ANIMATION_DURATION = 150;
+
+    function createSortable(listId, onAddCallback) {
+      Sortable.create(document.getElementById(listId), {
+        group: KANBAN_GROUP_NAME,
+        swapThreshold: SWAP_THRESHOLD,
+        handle: ".handle",
+        animation: listId === "todo" ? TODO_ANIMATION_DURATION : INPROGRESS_ANIMATION_DURATION,
+        onAdd: onAddCallback
+      });
+    }
+
+    createSortable("todo", evt => console.log(`Moved ${evt.item.innerText} to To Do`));
+    //createSortable("taskList", evt => console.log(`Moved ${evt.item.innerText} to To Do`));
+    //createSortable("inprogress", evt => console.log(`Moved ${evt.item.innerText} to In Progress`));
+    //createSortable("done", evt => console.log(`Moved ${evt.item.innerText} to Done`));
+
+    // Get all elements with the class "addTaskIcon"
+    const addTaskIcons = document.querySelectorAll('.addTaskIcon');
+    const addTaskModals = document.querySelectorAll('.addTaskModal');
+
+    // Define function to show modal
+    function showModal(modal) {
+      console.log('test')
+      modal.classList.add('show', 'fade');
+      modal.style.display = 'block';
+    }
+
+    // Add click event listener to each addTaskIcon element
+    addTaskIcons.forEach((addTaskIcon, index) => {
+      addTaskIcon.addEventListener('click', () => {
+        showModal(addTaskModals[index]);
+      });
+    });
+
+  </script>
+  <script>
+    //Create a comment and add event listener
+    function generateCommentHTML(author, text, date) {
+      const commentDate = new Date(date);
+      const formattedDate = commentDate.toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+        hour: 'numeric',
+        minute: 'numeric'
+      });
+      const commentCard = document.createElement('div');
+      commentCard.classList.add('card', 'mb-3');
+      const cardBody = document.createElement('div');
+      cardBody.classList.add('card-body');
+      const cardTitle = document.createElement('h6');
+      cardTitle.classList.add('card-subtitle', 'mb-2', 'text-muted');
+      cardTitle.textContent = `${author} - ${formattedDate}`;
+      const cardText = document.createElement('p');
+      cardText.classList.add('card-text');
+      cardText.textContent = text;
+      const buttonsDiv = document.createElement('div');
+      buttonsDiv.classList.add('d-flex', 'justify-content-end');
+      const editButton = document.createElement('button');
+      editButton.type = 'button';
+      editButton.classList.add('btn', 'btn-sm', 'btn-outline-primary', 'mx-1');
+      editButton.textContent = 'Edit';
+      const deleteButton = document.createElement('button');
+      deleteButton.type = 'button';
+      deleteButton.classList.add('btn', 'btn-sm', 'btn-outline-danger', 'mx-1');
+      deleteButton.textContent = 'Delete';
+      cardBody.appendChild(cardTitle);
+      cardBody.appendChild(cardText);
+      buttonsDiv.appendChild(editButton);
+      buttonsDiv.appendChild(deleteButton);
+      cardBody.appendChild(buttonsDiv);
+      commentCard.appendChild(cardBody);
+      // Add event listener to edit button
+      editButton.addEventListener('click', () => {
+        // Get the comment text and author from the HTML
+        const commentText = cardText.textContent;
+        const commentAuthor = cardTitle.textContent.split(' - ')[0];
+        // Show a prompt to the user to edit the comment text
+        const editedText = prompt('Edit your comment:', commentText);
+        cardText.addEventListener('focus', function () {
+          cardtext.classList.add('focus');
+        });
+        cardText.addEventListener('blur', function () {
+          commentBox.classList.remove('focus');
+        });
+        if (editedText) {
+          // Update the comment text in the HTML
+          cardText.textContent = editedText;
+          // Update the comment data in the task object
+          const commentIndex = task.comments.findIndex(comment => comment.author === commentAuthor && comment.text === commentText);
+          task.comments[commentIndex].text = editedText;
+          // Save the updated task data
+          localStorage.setItem('tasks', JSON.stringify(tasks));
+        }
+      });
+      // Add event listener to delete button
+      deleteButton.addEventListener('click', () => {
+        // Get the comment text and author from the HTML
+        const commentText = cardText.textContent;
+        const commentAuthor = cardTitle.textContent.split(' - ')[0];
+        const deleteButtonId = `deleteCommentButton-${Date.now()}-${Math.floor(Math.random() * 1000)}`;
+        deleteButton.setAttribute('id', deleteButtonId);
+        // Show a confirmation modal to the user
+        if (confirm('Are you sure you want to delete this comment?')) {
+          // Remove the comment from the HTML
+          commentCard.remove();
+          // Remove the comment data from the task object
+          const commentIndex = task.comments.findIndex(comment => comment.author === commentAuthor && comment.text === commentText);
+          task.comments.splice(commentIndex, 1);
+          // Save the updated task data
+          localStorage.setItem('tasks', JSON.stringify(tasks));
+        }
+        // Remove the comment data from the task object
+        const commentIndex = task.comments.findIndex(comment => comment.author === commentAuthor && comment.text === commentText);
+        task.comments.splice(commentIndex, 1);
+        // Save the updated task data
+        localStorage.setItem('tasks', JSON.stringify(tasks));
+      });
+      return commentCard;
+    }
+
+    function addComment() {
+      const author = 'John Doe'; // replace with actual author name
+      const date = new Date().toISOString(); // use current date/time, take from the enterprise
+      const taskId = document.getElementById('editTaskId').value;
+      const task = data.tasks.find(task => task.id === taskId);
+      const commentText = document.getElementById(`commentText${task.id}`).value;
+
+      // Create new comment object
+      const newComment = {
+        author: author,
+        date: date,
+        text: commentText
+      };
+      // Add new comment to task's comments array
+      task.comments.push(newComment);
+      console.log(task)
+
+      // Update comments section UI for the corresponding task
+      const newCommentContainer = generateCommentHTML(newComment.author, newComment.text, newComment.date);
+      const commentsSection = document.getElementById(`commentsSection${task.id}`);
+      //const commentsSection = document.querySelector(`#task-${task.id} .comments-section`);
+      commentsSection.appendChild(newCommentContainer);
+      // Clear the comment input field
+      document.getElementById(`commentText${task.id}`).value = '';
+    }
+
+    // Get all elements with the class "addCommentButton"
+    const addCommentButtons = document.querySelectorAll('.addCommentButton');
+
+    // Add click event listener to each addCommentButton element
+    addCommentButtons.forEach((addCommentButton) => {
+      addCommentButton.addEventListener('click', addComment);
+    });
+  </script>
+  <script>
+    function handleEditTaskClick(event) {
+      const taskId = event.target.getAttribute('data-task-id');
+      const task = data.tasks.find(task => task.id === taskId);
+      // Set the values in the edit task modal form
+      const editTaskIdInput = document.getElementById('editTaskId');
+      const editTaskTitleInput = document.getElementById('editTaskTitle');
+      const editTaskAssigneeInput = document.getElementById(`editTaskDescription${task.id}`);
+      const editTaskDescriptionInput = document.getElementById(`editTaskDescription${task.id}`);
+      const commentsSection = document.getElementById(`commentsSection${task.id}`);/////
+      editTaskIdInput.value = task.id;
+      //editTaskTitleInput.value = task.name;
+      editTaskAssigneeInput.value = task.assignee;
+      editTaskDescriptionInput.value = task.description;
+      const taskComments = task.comments;/////
+      // Clear existing comments
+      commentsSection.innerHTML = '';
+
+      // Render comments
+      taskComments.forEach(comment => {
+        // Update comments section UI for the corresponding task
+        const CommentContainer = generateCommentHTML(comment.author, comment.text, comment.date);
+        const commentsSection = document.getElementById(`commentsSection${task.id}`);
+        //const commentsSection = document.querySelector(`#task-${task.id} .comments-section`);
+        commentsSection.appendChild(CommentContainer);
+      });
+
+      // Show the edit task modal
+      const editTaskModal = new bootstrap.Modal(document.getElementById(`editTaskModal${task.id}`));
+
+      editTaskModal.show();
+    }
+    /*let data;
+    fetch('tasks.json').then(response => response.json()).then(jsonData => {
+      data = jsonData;
+      // Loop through tasks array and generate task cards
+      const taskList = document.getElementById('taskList');
+      data.tasks.forEach(task => {
+        // Create task card element
+        const taskCard = document.createElement('div');
+        taskCard.classList.add('card', 'mb-3', 'handle');
+        // Create task card header
+        const taskCardHeader = document.createElement('div');
+        taskCardHeader.classList.add('card-header');
+        taskCardHeader.textContent = task.title;
+        taskCard.appendChild(taskCardHeader);
+        // Create task card body
+        const taskCardBody = document.createElement('div');
+        taskCardBody.classList.add('card-body');
+        // Create task card body content (title, date and asignee)
+        const taskTitle = document.createElement('h5');
+        const taskCreationDate = document.createElement('p');
+        const taskAssignee = document.createElement('p');
+        taskTitle.classList.add('card-title');
+        taskCreationDate.classList.add('card-text');
+        taskAssignee.classList.add('.assignee')
+        taskCreationDate.textContent = `Created on: ${task.creationDate}`;
+        taskTitle.textContent = `${task.name}`;
+        taskAssignee.textContent = `${task.assignee}`;
+        taskCardBody.appendChild(taskTitle)
+        taskCardBody.appendChild(taskCreationDate);
+        const taskDescription = document.createElement('p');
+        taskDescription.classList.add('card-text', 'collapse');
+        taskDescription.textContent = task.description;
+        taskCardBody.appendChild(taskDescription);
+        // Create task card body buttons
+        const editButton = document.createElement('button');
+        editButton.classList.add('btn', 'btn-primary', 'me-2');
+        editButton.textContent = 'Edit';
+        editButton.setAttribute('data-task-id', task.id);
+        editButton.addEventListener('click', handleEditTaskClick);
+        taskCardBody.appendChild(editButton);
+        const deleteButton = document.createElement('button');
+        deleteButton.classList.add('btn', 'btn-danger');
+        deleteButton.textContent = 'Delete';
+        deleteButton.setAttribute('data-task-id', task.id);
+        //deleteButton.addEventListener('click', handleDeleteTaskClick);
+        taskCardBody.appendChild(deleteButton);
+        document.getElementById('addEditCommentButton').addEventListener('click', addComment);
+        taskCard.appendChild(taskCardBody);
+        taskList.appendChild(taskCard);
+      });
+    });
+  */
+  </script>
+  <script></script>
+</body>
+
 </html>
